@@ -12,7 +12,7 @@
 	export let fileUploaded = false;
 	// export let small = false
 
-	const lang = $page.data.lang;
+	const lang = 'es';
 
 	let errMsg = '';
 	let txtLazy: any;

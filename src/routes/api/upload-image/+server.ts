@@ -12,7 +12,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	const file = formData.get('file') as File;
 
 	console.log('🚀 ~ file:', file);
-	console.log('🚀 ~ lang:', lang);
+	// console.log('🚀 ~ lang:', lang);
 
 	// !validate syntax
 	// if (!lang || !LANGS.includes(lang)) return jsonErrGeneric(lang);
