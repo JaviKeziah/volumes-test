@@ -6,8 +6,6 @@ import path from 'path';
 
 // const uploadDir = path.join(process.cwd(), RAILWAY_VOLUME_MOUNT_PATH);
 // const uploadDir = path.join(process.cwd(), '/uploads');
-const uploadDir = path.join(process.cwd(), '/uploads');
-
 export const POST: RequestHandler = async ({ request }) => {
 	const formData = await request.formData();
 	const lang = formData.get('lang');
@@ -15,6 +13,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	console.log('🚀 ~ file:', file);
 	// console.log('🚀 ~ lang:', lang);
+	const uploadDir = RAILWAY_VOLUME_MOUNT_PATH;
 
 	// !validate syntax
 	// if (!lang || !LANGS.includes(lang)) return jsonErrGeneric(lang);
