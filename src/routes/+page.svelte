@@ -75,6 +75,9 @@
 	};
 </script>
 
+<img src="/uploads/primera-img.jpeg" alt="" />
+<img src="/app/uploads/primera-img.jpeg" alt="" />
+
 <div>
 	<!-- todo display err msgs -->
 	<!-- img to upload -->
