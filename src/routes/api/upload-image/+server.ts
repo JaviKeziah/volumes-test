@@ -13,7 +13,8 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	// !save file locally
 	const fileName = `primera-img${path.extname(file.name)}`;
-	const uploadPath = RAILWAY_VOLUME_MOUNT_PATH + fileName;
+	// const uploadPath = RAILWAY_VOLUME_MOUNT_PATH + fileName;
+	const uploadPath = `${RAILWAY_VOLUME_MOUNT_PATH}/${fileName}`;
 
 	try {
 		// Create the upload directory if it doesn't exist
