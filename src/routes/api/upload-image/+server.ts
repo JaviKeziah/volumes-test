@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 // const uploadDir = path.join(process.cwd(), RAILWAY_VOLUME_MOUNT_PATH);
+// const uploadDir = path.join(process.cwd(), '/uploads');
 const uploadDir = path.join(process.cwd(), '/uploads');
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -21,7 +22,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	// !save file locally
 	const fileName = `primera-img${path.extname(file.name)}`;
 	// const fileName = `${Date.now()}-${path.extname(file.name)}`;
-	const uploadPath = path.join(uploadDir, fileName);
+	// const uploadPath = path.join(uploadDir, fileName);
+	const uploadPath = RAILWAY_VOLUME_MOUNT_PATH + fileName;
 
 	try {
 		// Create the upload directory if it doesn't exist
