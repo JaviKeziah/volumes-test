@@ -2,15 +2,9 @@
 	import { page } from '$app/stores';
 
 	export let txt = 'Upload Image';
-	export let hide = false;
 	export let id = 'file';
 	export let name = 'file';
-	export let value = '';
 	export let sending = false;
-	export let disabled = false;
-	export let block = true;
-	export let fileUploaded = false;
-	// export let small = false
 
 	const lang = 'es';
 
@@ -102,31 +96,3 @@
 		{/if}
 	</form>
 </div>
-
-<style>
-	.img-uploaded-wrp {
-		max-height: 20rem;
-		overflow: hidden;
-		border-radius: var(--br-card);
-		margin-bottom: 1.5rem;
-	}
-	.img-uploaded-wrp.hide {
-		display: none;
-	}
-	div.hide,
-	input {
-		display: none;
-	}
-	label {
-		position: relative;
-		display: block;
-		cursor: pointer;
-	}
-	label > span {
-		position: relative;
-		display: block;
-	}
-	input.sending + label {
-		pointer-events: none;
-	}
-</style>
