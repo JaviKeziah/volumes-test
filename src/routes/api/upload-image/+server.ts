@@ -1,4 +1,4 @@
-import { RAILWAY_VOLUME_MOUNT_PATH } from '$env/static/private';
+import { NODE_ENV, RAILWAY_VOLUME_MOUNT_PATH } from '$env/static/private';
 
 import { json, type RequestHandler } from '@sveltejs/kit';
 import fs from 'fs';
@@ -14,7 +14,10 @@ export const POST: RequestHandler = async ({ request }) => {
 	// !save file locally
 	const fileName = `primera-img${path.extname(file.name)}`;
 	// const uploadPath = RAILWAY_VOLUME_MOUNT_PATH + fileName;
-	const uploadPath = `${RAILWAY_VOLUME_MOUNT_PATH}/${fileName}`;
+	const uploadPath =
+		NODE_ENV === 'development'
+			? path.join(uploadDir, fileName)
+			: `${RAILWAY_VOLUME_MOUNT_PATH}/${fileName}`;
 
 	try {
 		// Create the upload directory if it doesn't exist
