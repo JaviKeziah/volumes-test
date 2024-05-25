@@ -21,6 +21,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		const arrayBuffer = await file.arrayBuffer();
 		const buffer = Buffer.from(arrayBuffer);
+		// await fs.promises.writeFile(uploadPath, buffer);
 		await fs.promises.writeFile(uploadPath, file);
 		console.log('Archivo guardado exitosamente');
 	} catch (err) {
